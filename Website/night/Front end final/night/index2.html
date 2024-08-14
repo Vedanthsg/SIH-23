@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Roboto+Condensed:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('.menu-toggle').click(function(){
+            $('.menu-toggle').toggleClass('active');
+            $('nav').toggleClass('active');
+          })
+      });
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEIipLDc7PGAJdqNHql0kzWb5QWBVPrK0&callback=initMap">
+    </script>
+    <script defer src="script.js"></script>
+    <title>Your Website</title>
+</head>
+<body>
+    <header>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+        <nav>
+          <ul>
+            <li><a href="#sos">SOS</a></li>
+            <li><a href="#maps">SCOUT</a></li>
+            <li><a href="#supply">SUPPLY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+    </header>
+    <section id="sos">
+    <div class="background-image">
+      <div class="card">
+      <div class="circle">
+      </div>
+      <div class="circle">
+      </div>
+      <div class="card-inner">
+      </div>
+      </div>
+        
+        <!-- Your content goes here -->
+      <button id="SOSButton" onclick="initMap()">SOS</button>
+    </div>
+    </section>
+    <section id="maps">
+    <div class="backgroundimg">
+      <div id="map"></div>
+    </div>
+    </section>
+    <section id="supply">
+    <div class="backgroundimag">
+      <div class="card2">
+      <div class="circle2">
+      </div>
+      <div class="circle2">
+      </div>
+      <div class="card-inner2">
+      
+      
+      <form id="emergencyForm" class="emergency-form" onsubmit="submitForm(); return false;">
+        
+          <div>
+            <label for="disasterType">Select Disaster Type:</label>
+            <select id="disasterType" onchange="updateEssentials()">
+              <option value="floods">Floods</option>
+              <option value="earthquake">Earthquake</option>
+              <option value="landslides">Landslides</option>
+              <!-- Add more disaster options as needed -->
+            </select>
+          </div>
+          <div>
+            <label for="essentialType">Select Essential Type:</label>
+            <select id="essentialType">
+              <!-- Essentials for selected disaster will be dynamically updated here -->
+            </select>
+          </div>
+          <div>
+            <label for="details">Additional Details:</label>
+            <input type="text" id="details" placeholder="Enter details...">
+          </div>
+          <button type="submit" >Submit</button>
+          
+      </form>
+      </div>
+      </div>
+    </div>
+    </section>
+    <section id="contact">
+    <div class="background-image">
+      <div class="card3">
+        <div class="circle3">
+        </div>
+        <div class="circle3">
+        </div>
+        <div class="card-inner3">
+          <h1>                 
+              OUR DRONE WILL HELP YOU SOON! KINDLY STAY CALM!
+          </h1>
+        </div>
+        </div>
+     
+      
+    </section>
+
+</body>
+</html>

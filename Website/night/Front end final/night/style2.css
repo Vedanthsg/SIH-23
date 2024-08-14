@@ -1,0 +1,435 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arvo', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1{
+    font-size: 40px; 
+    color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+    word-spacing: 40px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    scroll-behavior: smooth ;
+}
+
+
+.menu-toggle
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.menu-toggle span
+{
+    position: absolute;
+    display: block;
+    height: 4px;
+    background: gray;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+}
+
+.menu-toggle.active
+{
+    background: #000000;  
+}
+
+.menu-toggle span:nth-child(1)
+{
+    top: 30%;
+}
+
+.menu-toggle span:nth-child(3)
+{
+    top: 70%;
+}
+
+.menu-toggle.active span:nth-child(1)
+{
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2)
+{
+    opacity: 0;
+
+}
+
+.menu-toggle.active span:nth-child(3)
+{
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    height: 50px;
+    transition: -5s;
+}
+
+nav.active{
+    right: 50px;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+nav ul li a:hover
+{
+    background: rgb(0, 0, 0);
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+}
+
+#sos,
+#maps,
+#supply,
+#contact{
+    height: 650px;
+}
+
+
+.background-image {
+    background: url('drones1.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Set the text color to make it visible on the background */
+}
+
+button {
+    background: #288d14;
+    background: linear-gradient(90deg, rgb(59, 153, 50) 0%, rgb(124, 207, 46) 100%);
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.card{
+  width: 400px;
+  height: 254px;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-inner{
+  width: inherit;
+  height: inherit;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+.card:hover{
+  transform: scale(1.04) rotate(1deg);
+}
+.circle:nth-child(1){
+  top: -25px;
+  left: -25px;
+}
+.circle:nth-child(2){
+  bottom: -25px;
+  right: -25px;
+  animation: move-down;
+}
+
+@keyframes move-up{
+  to 
+  {
+    transform: translateY(-10px);
+    
+  }
+}
+@keyframes move-down{
+  to 
+  {
+    transform: translateY(10px);
+
+  }
+}
+
+
+
+
+#SOSButton {
+
+    min-width: 300px;
+    min-height: 60px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #ffc7c7;
+    background: #d11010;
+    background: linear-gradient(90deg, rgb(161, 57, 57) 0%, rgb(167, 49, 49) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(151, 20, 20, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    animation: blinkAnimation 1s infinite;
+}
+
+@keyframes blinkAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#SOSButton::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #a51c1cd7;
+    box-shadow: 0 0 60px rgba(212, 8, 8, 0.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+    
+#SOSButton:hover, #SOSButton:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+    
+#SOSButton:hover::before, #SOSButton:focus::before {
+    opacity: 1;
+}
+    
+#SOSButton::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #d61111;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+    
+#SOSButton:hover::after, #SOSButton:focus::after {
+    animation: none;
+    display: none;
+}
+    
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+#map 
+  {
+    height: 700px;
+    width: 100%;
+    position: unset;
+    top: 50%;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.backgroundimg {
+    background: black; /* Replace 'your-background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Set the text color to make it visible on the background */
+}
+
+form {
+    display: none;
+    position:absolute;
+    bottom:20%;
+    left: 0;
+    width: 100%; /* Set your desired background color */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.backgroundimag {
+    background: black; /* Replace 'your-background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Set the text color to make it visible on the background */
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #c71919;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+  
+.emergency-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card2{
+    width: 100%;
+    height: 254px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .card-inner2{
+    width: inherit;
+    height: inherit;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+  
+  
+  .circle2:nth-child(1){
+    top: -25px;
+    left: -25px;
+    
+  }
+  .circle2:nth-child(2){
+    bottom: -25px;
+    right: -25px;
+    animation: move-down;
+  }
+  
+ 
+  .circle2{
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(rgb(185, 15, 15),rgb(172, 29, 29));
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up 2s ease-in infinite alternate-reverse;
+  
+  }
+
+  .card3{
+    width: 450px;
+    height: 254px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .card-inner3{
+    width: inherit;
+    height: inherit;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+  
+  .card3:hover{
+    transform: scale(1.04) rotate(1deg);
+  }
+
+  .circle3:nth-child(1){
+    top: -25px;
+    left: -25px;
+    
+  }
+  .circle3:nth-child(2){
+    bottom: -25px;
+    right: -25px;
+    animation: move-down;
+  }
+  
+  
+  
+  .circle3{
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(rgb(196, 15, 15),rgb(192, 22, 22));
+    border-radius: 30%;
+    position: absolute;
+    animation: move-up 2s ease-in infinite alternate-reverse;
+  
+  }
