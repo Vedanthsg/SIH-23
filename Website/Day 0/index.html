@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disaster Helpline</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAPXKxANpn1pBJhHLLRzYIcL3VS8LozCk&libraries=places"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Disaster Helpline</h1>
+  </header>
+
+  <section>
+    <button id="emergencyBtn" onclick="showEmergencyForm()">EMERGENCY</button>
+
+    <form id="emergencyForm" class="emergency-form" onsubmit="submitForm(); return false;">
+      <div>
+        <label for="disasterType">Select Disaster Type:</label>
+        <select id="disasterType" onchange="updateEssentials()">
+          <option value="floods">Floods</option>
+          <option value="earthquake">Earthquake</option>
+          <option value="landslides">Landslides</option>
+          <!-- Add more disaster options as needed -->
+        </select>
+      </div>
+      <div>
+        <label for="essentialType">Select Essential Type:</label>
+        <select id="essentialType">
+          <!-- Essentials for selected disaster will be dynamically updated here -->
+        </select>
+      </div>
+      <div>
+        <label for="details">Additional Details:</label>
+        <input type="text" id="details" placeholder="Enter details...">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Map container -->
+    <div id="map"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

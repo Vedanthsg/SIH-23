@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+button {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#mapContainer {
+    /* Add styles for map container */
+    background-color: aliceblue;
+}
+
+#etaDisplay {
+    margin-top: 20px;
+}

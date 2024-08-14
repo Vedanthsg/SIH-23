@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sos-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #999;
+        }
+
+        .sos-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="sos-button" onclick="alert('SOS button clicked!')">SOS</button>
+
+</body>
+
+</html>
