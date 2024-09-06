@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map with Coordinates</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEIipLDc7PGAJdqNHql0kzWb5QWBVPrK0&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=" async defer></script>
     <script>
         function initMap() {
-            // Initialize the map
+            
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: 12.9268265 , lng: 77.52649394225114 },
                 zoom: 15,
                 mapId: "satellite"
             });
 
-            // Read coordinates from the text file
             fetch('output.txt')
                 .then(response => response.text())
                 .then(data => {
                     // Split the data into lines
                     var lines = data.split('\n');
 
-                    // Loop through each line and mark the coordinates on the map
                     lines.forEach(line => {
                         var coordinates = line.split(',');
                         var marker = new google.maps.Marker({
