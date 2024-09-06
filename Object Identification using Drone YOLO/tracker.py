@@ -3,15 +3,15 @@ import math
 
 class Tracker:
     def __init__(self):
-        # Store the center positions of the objects
+        # Store the center positions of the objects 
         self.center_points = {}
-        # Keep the count of the IDs
-        # each time a new object id detected, the count will increase by one
+        # Keep the count of the IDs 
+        # each time a new object id detected, the count will increase by one 
         self.id_count = 0
 
 
     def update(self, objects_rect):
-        # Objects boxes and ids
+        # Objects boxes and ids 
         objects_bbs_ids = []
 
         # Get center point of new object
@@ -20,7 +20,7 @@ class Tracker:
             cx = (x + x + w) // 2
             cy = (y + y + h) // 2
 
-            # Find out if that object was detected already
+            # Find out if that object was detected already 
             same_object_detected = False
             for id, pt in self.center_points.items():
                 dist = math.hypot(cx - pt[0], cy - pt[1])
