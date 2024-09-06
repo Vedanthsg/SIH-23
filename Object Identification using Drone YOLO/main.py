@@ -15,10 +15,9 @@ def RGB(event, x, y, flags, param):
 cv2.namedWindow('RGB')
 cv2.setMouseCallback('RGB', RGB)
 
-cap=cv2.VideoCapture("C:/Users/sveda/Documents/_SIH/droneviewpeoplecounteryolov8-main/droneviewpeoplecounteryolov8-main/droneviewpeoplecounteryolov8-main/chennaifloods.mp4")
-# cap=cv2.VideoCapture("C:/Users/sveda/Documents/_SIH/droneviewpeoplecounteryolov8-main/droneviewpeoplecounteryolov8-main/droneviewpeoplecounteryolov8-main/airstrike.mp4")
+cap=cv2.VideoCapture("floods.mp4") # provide path for input video
 
-my_file = open("C:/Users/sveda/Documents/_SIH/droneviewpeoplecounteryolov8-main/droneviewpeoplecounteryolov8-main/droneviewpeoplecounteryolov8-main/coco.txt", "r")
+my_file = open("coco.txt", "r") # provide path for coco.txt 
 data = my_file.read()
 class_list = data.split("\n") 
 
